@@ -1,16 +1,13 @@
 from typing import List
-
 def selectionSort(array, size) -> List[int]:
-  # Write your code here
-  for i in range(len(arr)):
-    minimum = i
-    for j in range(i+1,len(arr)):
-      if arr[minimum]>arr[j]:
-        minimum=j
-    arr[i],arr[minimum] = arr[minimum],arr[i]
-  return arr
+  for step in range(size):
+    min_idx = step
+    for i in range(step + 1, size):
+      if array[i] < array[min_idx]:
+        min_idx = i
+    (array[step], array[min_idx]) = (array[min_idx], array[step])
+  return array
 
-# Do not change the following code
 input_data = input()
 data = []
 for item in input_data.split(', '):
